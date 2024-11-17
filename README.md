@@ -15,29 +15,30 @@ If Node.js and npm are not installed, you can download and install them from htt
 # 1. Global Installation (Optional)
     You can install ESLint globally if you want to use it across multiple projects. This allows you to run the eslint command from anywhere in your terminal.
 
-Step 1: Install ESLint globally
+## Step 1: Install ESLint globally
 Run the following command to install ESLint globally:
 
     npm install -g eslint
-Step 2: Verify the Installation
+
+## Step 2: Verify the Installation
 You can verify that ESLint is installed by checking its version:
 
     eslint --version
 This will output the version of ESLint that is installed.
 
-Step 3: Lint Your Project
+## Step 3: Lint Your Project
 Once ESLint is installed globally, you can run it against your project folder using:
 
     eslint .
-2. Local Installation (Recommended)
+* 2. Local Installation (Recommended)
 It’s generally recommended to install ESLint locally within each project. This ensures that each project can have its own version of ESLint, preventing version conflicts between projects.
 
-Step 1: Install ESLint Locally
+* Step 1: Install ESLint Locally
 In your project directory, run the following command to install ESLint as a development dependency:
 
     npm install eslint --save-dev
     
-Step 2: Initialize ESLint Configuration
+* Step 2: Initialize ESLint Configuration
 Once ESLint is installed, you need to set it up by creating a configuration file. You can run the following command to generate an .eslintrc file:
 
     npx eslint --init
@@ -49,51 +50,53 @@ Which language features do you want ESLint to check? (ES6, TypeScript, etc.)
 Whether you’re using TypeScript or JavaScript
 You can always modify the .eslintrc file manually later if needed.
 
-Step 3: Lint Your Project
+## Step 3: Lint Your Project
 Once ESLint is set up, you can run it on your project using:
 
     npx eslint .
 This will check all the JavaScript files in the current directory and subdirectories for any style issues.
 
-3. Configuration File (.eslintrc)
+## 3. Configuration File (.eslintrc)
 You can customize your ESLint setup by creating or editing the .eslintrc configuration file. This file can be in either JSON, YAML, or JavaScript format. Below is an example of a typical .eslintrc.json file for a Node.js project:
 
-    {
-      "env": {
-        "browser": true,
-        "es2021": true,
-        "node": true
-      },
-      "extends": [
-        "eslint:recommended",
-        "plugin:node/recommended"
-      ],
-      "parserOptions": {
-        "ecmaVersion": "latest",
-        "sourceType": "module"
-      },
-      "rules": {
-        "indent": ["error", 2],
-        "linebreak-style": ["error", "unix"],
-        "quotes": ["error", "single"],
-        "semi": ["error", "always"]
-      }
-    }
+        {
+          "env": {
+            "browser": true,
+            "es2021": true,
+            "node": true
+          },
+          "extends": [
+            "eslint:recommended",
+            "plugin:node/recommended"
+          ],
+          "parserOptions": {
+            "ecmaVersion": "latest",
+            "sourceType": "module"
+          },
+          "rules": {
+            "indent": ["error", 2],
+            "linebreak-style": ["error", "unix"],
+            "quotes": ["error", "single"],
+            "semi": ["error", "always"]
+          }
+        }
+
    
-Key Sections:
+## Key Sections:
 env: Specifies the environments your code will run in (e.g., Node.js, browser, etc.).
 extends: Defines which set of base configurations or styles to inherit from. You can extend from "eslint
 " or a popular style guide like Airbnb, Standard, etc.
 rules: Customize individual linting rules for your project. For example, the example config enforces 2-space indentation, Unix-style line breaks, single quotes, and mandatory semicolons.
-5. Additional ESLint Plugins (Optional)
+
+## 5. Additional ESLint Plugins (Optional)
 To enhance ESLint's functionality, you can install and use plugins. For example, you can use the eslint-plugin-node for additional Node.js-specific linting.
 
-Step 1: Install the Plugin
+## Step 1: Install the Plugin
 To install eslint-plugin-node, run:
 
     npm install eslint-plugin-node --save-dev
     
-Step 2: Update .eslintrc to Include the Plugin
+## Step 2: Update .eslintrc to Include the Plugin
 In your .eslintrc.json file, add the plugin to the "plugins" array and extend the plugin's recommended rules:
 
     {
@@ -113,7 +116,7 @@ In your .eslintrc.json file, add the plugin to the "plugins" array and extend th
       }
     }
     
-5. Running ESLint on Your Project Files
+## 5. Running ESLint on Your Project Files
 To lint your project files, you can run the following command:
 
     npx eslint .
@@ -128,12 +131,13 @@ ESLint can automatically fix certain issues in your code. To do this, add the --
     npx eslint . --fix
 This will automatically fix issues that can be fixed (like formatting errors) and leave others for manual resolution.
 
-6. Integrating with Editors
+## 6. Integrating with Editors
 Many code editors support ESLint integration, which can provide real-time linting feedback as you write code. For example, in VS Code:
 
 Install the ESLint extension from the VS Code Marketplace.
 ESLint will automatically start linting your code based on the .eslintrc configuration.
-7. Conclusion
+
+# 7. Conclusion
 You have now successfully set up ESLint in your Node.js project!
 
 Global Installation is useful for general system-wide use.
